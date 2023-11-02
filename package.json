@@ -21,7 +21,7 @@
         "test:e2e": "jest '(\\/test\\/e2e/).*'",
         "pack": "npm run build && electron-builder --dir",
         "dist-win": "npm run build && electron-builder --windows -p onTagOrDraft",
-        "dist-mac": "npm run build && electron-builder --mac -p onTagOrDraft",
+        "dist-mac": "set NODE_OPTIONS=--openssl-legacy-provider && npm run build && electron-builder --mac -p onTagOrDraft",
         "dist-linux": "npm run build && electron-builder --linux -p onTagOrDraft",
         "dist-all": "npm run build && electron-builder -mwl",
         "postinstall": "electron-builder install-app-deps",
@@ -49,7 +49,7 @@
         "appId": "com.github.rem2016.pomodoro-logger",
         "publish": {
             "provider": "github",
-            "owner": "zxch3n",
+            "owner": "sphantix",
             "repo": "PomodoroLogger"
         },
         "mac": {
@@ -82,17 +82,17 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+ssh://git@github.com:zxch3n/PomodoroLogger.git"
+        "url": "git+ssh://git@github.com:sphantix/PomodoroLogger.git"
     },
     "author": {
-        "name": "Zixuan Chen",
-        "email": "remch183@outlook.com"
+        "name": "Xu Hang",
+        "email": "sphantix@gmail.com"
     },
     "license": "LGPL-3.0-or-later",
     "bugs": {
-        "url": "https://github.com/zxch3n/PomodoroLogger/issues"
+        "url": "https://github.com/sphantix/PomodoroLogger/issues"
     },
-    "homepage": "https://github.com/zxch3n/PomodoroLogger",
+    "homepage": "https://github.com/sphantix/PomodoroLogger",
     "devDependencies": {
         "@babel/core": "^7.4.5",
         "@babel/plugin-proposal-class-properties": "^7.4.4",
@@ -162,8 +162,8 @@
         "marked": "^4.0.10",
         "native-ext-loader": "^2.3.0",
         "nedb": "^1.8.0",
-        "node-gyp": "^9.0.0",
-        "node-sass": "^7.0.0",
+        "node-gyp": "^10.0.0",
+        "node-sass": "^9.0.0",
         "prettier": "^2.0.2",
         "prop-types": "^15.7.2",
         "react": "^16.8.6",
@@ -207,7 +207,8 @@
     "dependencies": {
         "@electron/remote": "^2.0.8",
         "active-win": "^7.7.2",
-        "node-mac-permissions": "^2.2.0"
+        "caniuse-lite": "^1.0.30001559",
+        "ions": "^2.2.0"
     },
     "resolutions": {
         "node-ipc": "9.1.1"
